@@ -11,7 +11,7 @@ import com.anur.messageserver.core.AbstractService;
 import com.anur.messageserver.rabbitmq.MsgSender;
 import com.github.pagehelper.PageHelper;
 import lombok.extern.java.Log;
-import org.springframework.amqp.rabbit.support.CorrelationData;
+import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;

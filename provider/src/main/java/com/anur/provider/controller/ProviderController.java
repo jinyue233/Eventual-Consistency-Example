@@ -10,6 +10,7 @@ import com.anur.provider.service.PrepareMsgService;
 import com.anur.provider.service.ProviderOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.*;
@@ -20,6 +21,7 @@ import java.util.concurrent.Future;
  */
 
 @RestController
+//@RequestMapping("/provider")
 public class ProviderController {
 
     @Autowired
@@ -31,8 +33,8 @@ public class ProviderController {
     @Autowired
     private PrepareMsgService prepareMsgService;
 
-    @GetMapping
-    public void test() throws Exception {
+    @RequestMapping("/test")
+    public String test() throws Exception {
 
         String routingKey = "test.key.testing";
         Map<String, String> map = new HashMap<>();
@@ -42,7 +44,7 @@ public class ProviderController {
         String mapStr = JSON.toJSONString(map);
 
         TestMsg testMsg = new TestMsg();
-        testMsg.setContent("这是一条测试消息");
+        testMsg.setContent("this is a message test");
         String testMsgStr = JSON.toJSONString(testMsg);
         // ===============================
 
@@ -58,6 +60,7 @@ public class ProviderController {
         if (future.get() == 1) {
             prepareMsgService.confirmMsgToSend(orderId, this.getClass().getSimpleName());
         }
+        return "put a message successfully!";
     }
 
     @GetMapping("check")

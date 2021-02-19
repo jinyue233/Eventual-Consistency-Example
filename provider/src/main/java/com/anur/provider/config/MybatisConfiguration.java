@@ -33,10 +33,10 @@ public class MybatisConfiguration {
         properties.setReasonable("true");// 页码<=0 查询第一页，页码>=总页数查询最后一页
         properties.setSupportMethodsArguments("true");// 支持通过 Mapper 接口参数来传递分页参数
 
-        PageInterceptor pageInterceptor = new PageInterceptor();
+       /* PageInterceptor pageInterceptor = new PageInterceptor();
         pageInterceptor.setProperties(properties.getProperties());
         //  添加插件
-        factory.setPlugins(new Interceptor[]{pageInterceptor});
+        factory.setPlugins(new Interceptor[]{pageInterceptor});*/
 
         // 添加XML目录
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();

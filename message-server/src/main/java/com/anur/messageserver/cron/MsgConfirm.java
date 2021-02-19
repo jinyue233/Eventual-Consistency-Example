@@ -8,7 +8,7 @@ import com.anur.messageserver.util.UrlBuilder;
 import com.github.pagehelper.PageHelper;
 import lombok.extern.java.Log;
 import lombok.extern.log4j.Log4j;
-import org.springframework.amqp.rabbit.support.CorrelationData;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
