@@ -54,10 +54,10 @@ public class MsgSender implements RabbitTemplate.ReturnCallback, RabbitTemplate.
         if (!ack) {
             log.info("Msg ack fail: " + correlationData.getId());
         }
-        int result = transactionMsgService.acknowledgement(correlationData.getId(), artistConfiguration.getArtist());
+       /* int result = transactionMsgService.acknowledgement(correlationData.getId(), artistConfiguration.getArtist());
         if (result == 0) {
             log.info("MSG: " + correlationData.getId() + "ACK SUCCESS BUT UPDATE ACK STATUS FAIL");
-        }
+        }*/
     }
 
     // 实现InitializingBean

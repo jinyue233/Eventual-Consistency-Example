@@ -71,11 +71,12 @@ public class TestReceiver implements ChannelAwareMessageListener {
             });
             success = true;
         } finally {
-            if (success) {
+            // TODO 这里会有连接池泄露问题
+            /*if (success) {
                 channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
             } else {
                 channel.basicNack(message.getMessageProperties().getDeliveryTag(), false, true);
-            }
+            }*/
         }
     }
 }
